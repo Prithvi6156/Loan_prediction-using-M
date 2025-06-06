@@ -1,5 +1,9 @@
-1. Extract to a separate folder
-2. Open command prompt/terminal and run - pip install numpy matplotlib seaborn wordcloud scikit-learn
-3. Open the train_model.ipynb and run it first
-4. Open app.py and start the flask app in terminal - python app.py
-5. Open http://127.0.0.1:5000/ in your browser (or) Flask's localhost to view the website
+First, we load and clean the data by stripping whitespace and dropping the loan_id column. Then, categorical variables (education, self_employed, loan_status) are encoded into binary values.
+
+The data is split into 80% training and 20% testing sets. To address class imbalance, we apply RandomOverSampler to rebalance the classes.
+
+Numeric features are scaled using StandardScaler. We select the top 8 features using SelectKBest with ANOVA F-score and reduce dimensionality further with PCA, keeping 5 principal components.
+
+Seven models—Logistic Regression, Random Forest, SVM, Gradient Boosting, Naïve Bayes, KNN, and Decision Tree—are trained and compared using accuracy, classification reports, confusion matrix heatmaps, and accuracy bar charts.
+
+The best model, Gradient Boosting, achieves about 94% accuracy. Finally, the model and preprocessing artefacts are saved using joblib.dump.
