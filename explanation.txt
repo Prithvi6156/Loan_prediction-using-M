@@ -7,3 +7,4 @@ Numeric features are scaled using StandardScaler. We select the top 8 features u
 Seven models—Logistic Regression, Random Forest, SVM, Gradient Boosting, Naïve Bayes, KNN, and Decision Tree—are trained and compared using accuracy, classification reports, confusion matrix heatmaps, and accuracy bar charts.
 
 The best model, Gradient Boosting, achieves about 94% accuracy. Finally, the model and preprocessing artefacts are saved using joblib.dump.
+
